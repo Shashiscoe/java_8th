@@ -1,5 +1,6 @@
 package inner;
 
+
 public class AnonymousClassTest {
 	
 
