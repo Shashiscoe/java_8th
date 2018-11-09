@@ -1,6 +1,7 @@
 package inner;
 
 
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 /*
@@ -14,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 public class InnerAndLemda {
+	
 
 	public static void main(String[] args) {
 

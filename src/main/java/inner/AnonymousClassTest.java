@@ -1,7 +1,9 @@
 package inner;
 
 
+
 public class AnonymousClassTest {
+	
 	
 
 	public static void main(String[] args) {
