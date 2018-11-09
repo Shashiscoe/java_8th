@@ -5,6 +5,7 @@ public class DefaultMethod {
 	public static void main(String[] args) {
 
 		
+		
 		// Test2 class uses interface default method
 		Test2 test2 = new Test2();
 		test2.m1();
