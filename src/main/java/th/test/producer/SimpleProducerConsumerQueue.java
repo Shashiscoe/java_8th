@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class SimpleProducerConsumer {
+public class SimpleProducerConsumerQueue {
 
 	AtomicInteger counter = new AtomicInteger(1);
 	Queue<Integer> queue = new LinkedList<>();
@@ -80,7 +80,7 @@ public class SimpleProducerConsumer {
 
 	public static void main(String[] args) {
 
-		SimpleProducerConsumer testExample = new SimpleProducerConsumer();
+		SimpleProducerConsumerQueue testExample = new SimpleProducerConsumerQueue();
 
 		Thread producer = new Thread(() -> {
 			testExample.produce();
