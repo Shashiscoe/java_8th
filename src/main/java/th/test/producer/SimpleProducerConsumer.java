@@ -21,11 +21,11 @@ public class SimpleProducerConsumer {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+				} else {
+					System.out.println("start producing");
+					queue.add(counter.getAndIncrement());
+					notifyAll();
 				}
-
-				System.out.println("start producing");
-				queue.add(counter.getAndIncrement());
-				notifyAll();
 
 			}
 		}
@@ -45,10 +45,11 @@ public class SimpleProducerConsumer {
 						e.printStackTrace();
 					}
 
+				} else {
+					System.out.println("consumer_1 start consuming - " + queue.poll());
+					notifyAll();
 				}
 
-				System.out.println("consumer_1 start consuming - " + queue.poll());
-				notifyAll();
 			}
 
 		}
@@ -68,10 +69,11 @@ public class SimpleProducerConsumer {
 						e.printStackTrace();
 					}
 
+				} else {
+					System.out.println("consumer_2 start consuming - " + queue.poll());
+					notifyAll();
 				}
 
-				System.out.println("consumer_2 start consuming - " + queue.poll());
-				notifyAll();
 			}
 		}
 	}
