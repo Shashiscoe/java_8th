@@ -8,10 +8,21 @@ public class TestCountDounExeCutor {
 
 	public static void main(String[] args) {
 
-		CountDownLatch countDownLatch = new CountDownLatch(10);
+		CountDownLatch countDownLatch = new CountDownLatch(50);
 
-		ExecutorService executorService = Executors.newFixedThreadPool(2);
+		ExecutorService executorService = Executors.newFixedThreadPool(15);
 
+
+		for (int i = 0; i < 50; i++) {
+			executorService.submit(() -> {
+				System.out.println(Thread.currentThread().getName() + " is  arrived. Remaning thread : "
+						+ countDownLatch.getCount());
+				countDownLatch.countDown();
+
+			});
+		}
+
+		
 		executorService.submit(() -> {
 			try {
 				countDownLatch.await();
@@ -22,16 +33,7 @@ public class TestCountDounExeCutor {
 				e.printStackTrace();
 			}
 		});
-
-		for (int i = 0; i < 10; i++) {
-			executorService.submit(() -> {
-				countDownLatch.countDown();
-				System.out.println(Thread.currentThread().getName() + " is  arrived. Remaning thread : "
-						+ countDownLatch.getCount());
-
-			});
-		}
-
+		
 		executorService.shutdown();
 
 	}

@@ -6,14 +6,13 @@ public class TestCountDoun2 {
 
 	public static void main(String[] args) {
 
-		CountDownLatch countDownLatch = new CountDownLatch(10);
+		CountDownLatch countDownLatch = new CountDownLatch(50);
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 50; i++) {
 			new Thread(() -> {
-
-				countDownLatch.countDown();
 				System.out.println(Thread.currentThread().getName() + "  is Arrived. Remaning Thread : "
 						+ countDownLatch.getCount());
+				countDownLatch.countDown();
 
 			}).start();
 		}

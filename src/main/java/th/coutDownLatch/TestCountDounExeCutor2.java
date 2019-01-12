@@ -8,15 +8,15 @@ public class TestCountDounExeCutor2 {
 
 	public static void main(String[] args) {
 
-		CountDownLatch countDownLatch = new CountDownLatch(10);
+		CountDownLatch countDownLatch = new CountDownLatch(50);
 
-		ExecutorService executorService = Executors.newFixedThreadPool(1);
+		ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 50; i++) {
 			executorService.submit(() -> {
-				countDownLatch.countDown();
 				System.out.println(Thread.currentThread().getName() + " is  arrived. Remaning thread : "
 						+ countDownLatch.getCount());
+				countDownLatch.countDown();
 
 			});
 		}
