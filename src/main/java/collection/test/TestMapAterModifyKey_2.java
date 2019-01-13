@@ -24,6 +24,8 @@ public class TestMapAterModifyKey_2 {
 		// hashCode will be changed, so value corresponding to this key will be null.
 		System.out.println(" after modifying  Pesrson object by using key " + map.get(person));
 
+		
+		//But in both the case map contains updated value, because we are changing the same object.
 		System.out.println(" after modifying  Pesrson object " + map + " ,person  hashCode ::" + person.hashCode());
 	}
 
