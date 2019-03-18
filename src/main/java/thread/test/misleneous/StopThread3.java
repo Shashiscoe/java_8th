@@ -12,7 +12,7 @@ public class StopThread3 {
 		MyThread2 myThread = new MyThread2();
 		myThread.start();
 
-		Thread.sleep(1000);
+		Thread.sleep(900);
 
 		myThread.interrupt();
 	}
@@ -27,6 +27,8 @@ class MyThread2 extends Thread {
 
 		System.out.println("start run");
 
+	
+		
 		while (!Thread.currentThread().isInterrupted()) {
 
 			try {

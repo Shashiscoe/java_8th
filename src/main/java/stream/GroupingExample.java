@@ -29,6 +29,9 @@ public class GroupingExample {
 				.collect(Collectors.groupingBy(Employee1::getDeptId, Collectors.counting()));
 
 		System.out.println("count number of employee in each department " + employeeCountPerGrp);
+		
+		
+		
 
 	}
 

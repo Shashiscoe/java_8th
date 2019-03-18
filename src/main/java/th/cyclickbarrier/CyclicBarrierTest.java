@@ -9,7 +9,7 @@ public class CyclicBarrierTest {
 
 	public static void main(String[] args) {
 
-		CyclicBarrier cyclicBarrier = new CyclicBarrier(10, () -> {
+		CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> {
 
 			System.out.println("We all have reached,Now we can start _2");
 
@@ -17,12 +17,22 @@ public class CyclicBarrierTest {
 
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 3; i++) {
 			executorService.submit(() -> {
 
 				try {
-					System.out.println(Thread.currentThread().getName() + " is arrived. Reaaning thread for waiting"
-							+ cyclicBarrier.getNumberWaiting());
+					System.out.println("first barrier:: " + Thread.currentThread().getName()
+							+ " is arrived. Reaaning thread for waiting" + cyclicBarrier.getNumberWaiting());
+					cyclicBarrier.await();
+					
+					
+					System.out.println("second barrier:: " + Thread.currentThread().getName()
+							+ " is arrived. Reaaning thread for waiting" + cyclicBarrier.getNumberWaiting());
+					cyclicBarrier.await();
+					
+					
+					System.out.println("third barrier:: " + Thread.currentThread().getName()
+							+ " is arrived. Reaaning thread for waiting" + cyclicBarrier.getNumberWaiting());
 					cyclicBarrier.await();
 
 					System.out

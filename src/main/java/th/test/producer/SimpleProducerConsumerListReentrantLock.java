@@ -62,7 +62,7 @@ public class SimpleProducerConsumerListReentrantLock {
 					System.out.println("consumer_1 start consuming - " + list.remove(list.size() - 1));
 					condition.signalAll();
 				}
-				lock.lock();
+				lock.unlock();
 
 			}
 
