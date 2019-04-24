@@ -2,6 +2,7 @@ package algo.sorting;
 
 public class SeqMergeSort {
 
+
 	
 	int nums[] = null;
 	int tempNums[] = null;
