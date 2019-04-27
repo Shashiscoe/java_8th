@@ -5,7 +5,7 @@ public class SeqMergeSort {
 	
 	
 	
-	int nums[]
+	int nums[];
 	int tempNums[] ;
 
 	SeqMergeSort(int num[]) {
